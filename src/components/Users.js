@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../features/userSlice";
 import NavBar from "./NavBar";
+import { PulseLoader } from "react-spinners";
 
 const Users = () => {
   const dispatch = useDispatch();
@@ -11,9 +12,15 @@ const Users = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  if (status === "loading") return <p>Loading users.......</p>;
-  if (status === "failed") return <p>Error: {error}</p>;
+  if (status === "loading")
+    return (
+      <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
+        <PulseLoader color="#007bff" size={15} />
+      </div>
+    );
 
+  if (status === "failed") return <p>Error: {error}</p>;
+  
   return (
     <>
       <NavBar />

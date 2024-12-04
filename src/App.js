@@ -2,12 +2,14 @@ import './App.css';
 import { Routes,Route } from 'react-router-dom';
 import Movies from './components/Movies';
 import Users from './components/Users';
+import Products from './components/Products';
 function App() {
   return (
     <div className="App">
         <Routes>
           <Route path="/" element={<Movies/>}/>
           <Route path="/users" element={<Users/>}/>
+          <Route path="/products" element={<Products/>}/>
         </Routes>
     </div>
   );
