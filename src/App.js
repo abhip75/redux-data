@@ -5,6 +5,7 @@ import Users from './components/Users';
 import Products from './components/Products';
 import Info from './components/Info';
 import Album from './components/Album';
+import Comments from './components/Comments';
 function App() {
   return (
     <div className="App">
@@ -14,6 +15,7 @@ function App() {
           <Route path="/products" element={<Products/>}/>
           <Route path="/info" element={<Info/>}/>
           <Route path="/album" element={<Album/>}/>
+          <Route path='/comments' element={<Comments/>}/>
         </Routes>
     </div>
   );
